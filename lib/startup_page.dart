@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_clone/get_started_screen.dart';
 
 import 'onboarding/onboarding_screen.dart';
 
@@ -21,7 +22,7 @@ class _StartupPageState extends State<StartupPage> {
       Duration(seconds: 3),
           () => Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => OnboardingScreen()),
+        MaterialPageRoute(builder: (context) => GetStartedScreen()),
       ),
     );
   }
