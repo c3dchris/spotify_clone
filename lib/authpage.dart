@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/pages/login_page.dart';
+import 'package:spotify_clone/pages/registerpage.dart';
 import 'package:spotify_clone/widgets/button_widget.dart';
 import 'package:spotify_clone/widgets/icon_back_button.dart';
 import 'package:spotify_clone/widgets/logo.dart';
@@ -74,7 +75,7 @@ class Authpage extends StatelessWidget {
                           onpressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage()),
+                                builder: (context) => Registerpage()),
                           ),
                           size: 19,
                           width: 147,

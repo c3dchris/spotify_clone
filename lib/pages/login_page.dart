@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/constats/appcolor.dart';
+import 'package:spotify_clone/pages/homepage.dart';
 import 'package:spotify_clone/widgets/button_widget.dart';
 import 'package:spotify_clone/widgets/icon_back_button.dart';
 import 'package:spotify_clone/widgets/logo.dart';
@@ -135,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           SizedBox(height: 20),
-                          ButtonWidget(text: 'Sign In', onpressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()))),
+                          ButtonWidget(text: 'Sign In', onpressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()))),
                           SizedBox(height: 21),
                           Row(
                             children: <Widget>[

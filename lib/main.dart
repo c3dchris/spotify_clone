@@ -1,13 +1,20 @@
 import 'dart:async';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:splash_view/splash_view.dart';
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/onboarding/onboarding_screen.dart';
+import 'package:spotify_clone/get_started_screen.dart';
 import 'package:spotify_clone/startup_page.dart';
+import 'package:spotify_clone/widgets/logo.dart';
 
-void main() {
-  runApp(
-    const SpotifyClone(),
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
+  runApp(const SpotifyClone());
 }
 
 class SpotifyClone extends StatefulWidget {
@@ -19,22 +26,15 @@ class SpotifyClone extends StatefulWidget {
 
 class _SpotifyCloneState extends State<SpotifyClone> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Timer(
-      Duration(seconds: 3),
-      () => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => OnboardingScreen()),
-      ),
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: StartupPage(),
+      home: SplashView(
+        backgroundColor: Color(0xff0D0C0C),
+        logo: Container(
+          child: SvgPicture.asset('assets/images/logo.svg'),
+        ),
+        done: Done(GetStartedScreen()),
+      ),
     );
   }
 }
