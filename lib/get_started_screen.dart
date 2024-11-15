@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify_clone/constats/appcolor.dart';
 import 'package:spotify_clone/onboarding/onboarding_screen.dart';
 import 'package:spotify_clone/widgets/button_widget.dart';
+import 'package:spotify_clone/widgets/logo.dart';
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
@@ -16,13 +18,7 @@ class GetStartedScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Container(
-            width: 196,
-            height: 59,
-            padding: EdgeInsets.all(1),
-            margin: EdgeInsets.only(top: 42),
-            child: SvgPicture.asset('assets/images/logo.svg'),
-          ),
+         Logo(picture: SvgPicture.asset('assets/images/logo.svg')),
           SizedBox(height: 403),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 53),
@@ -31,7 +27,7 @@ class GetStartedScreen extends StatelessWidget {
               'Enjoy listening to music',
               style: TextStyle(
                 fontSize: 19,
-                color: Color(0xFFDADADA),
+                color: AppColor.headerColor3,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.w700,
               ),
@@ -48,7 +44,7 @@ class GetStartedScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 17,
                 decoration: TextDecoration.none,
-                color: Color(0xFF797979),
+                color: AppColor.headerText2,
                 fontWeight: FontWeight.w400,
               ),
             ),

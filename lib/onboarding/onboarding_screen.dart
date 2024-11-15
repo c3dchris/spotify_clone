@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/widgets/button_widget.dart';
 import 'package:spotify_clone/authpage.dart';
+import 'package:spotify_clone/widgets/logo.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -29,14 +30,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                width: 196,
-                height: 59,
-                padding: EdgeInsets.all(1),
-                margin: EdgeInsets.only(top: 42),
-                child: SvgPicture.asset('assets/images/logo.svg'),
+              Logo(
+                picture: SvgPicture.asset('assets/images/logo.svg'),
               ),
-
               SizedBox(height: 340),
               Column(
                 children: [
@@ -107,11 +103,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                         ],
                       ),
-
                     ],
                   ),
                 ],
               ),
+              SizedBox(height: 70),
               ButtonWidget(
                 text: "Continue",
                 onpressed: () => Navigator.push(
